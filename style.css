@@ -30,7 +30,7 @@ body{
 .logo{
     grid-area:logo;
     padding: 1rem;
-    align-self:center;
+    align-self:start;
 }
 .navigation{
     grid-area: mymenu;
@@ -48,12 +48,12 @@ body{
 }
 .grid-container{
     display:grid;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items:flex-start;
     grid-template-areas:
         'logo mymenu mymenu mymenu image'
         'header header header header image';
-    background-color: rgb(221, 221, 219);
+    background-color: rgba(237, 235, 242, 0.871);
 }
 
 /*logo styling*/
@@ -88,8 +88,8 @@ body{
 /*image-styling*/
 .landing_image img{
     object-fit:cover;
-    width:100%;
-    height:80vh;
+    max-width:100%;
+    height:100vh;
 }
 
 /*hero message*/
@@ -97,12 +97,20 @@ body{
     margin-left: 1rem;
     font-weight: 800;
     font-family: 'Megrim', cursive;
+    line-height: 1.9;
 }
 
-.cta h2 {
+.cta #cta-title {
     font-size: 3rem;
+    position: relative;
+    top:-100px;
+    transition: top 0.7s ease-in;
 }
 
-.cta p {
+
+.cta #cta-subtitle {
     font-size: 1.5rem;
+    position:relative;
+    left:100px;
+    transition: left 0.7s ease-in;
 }
