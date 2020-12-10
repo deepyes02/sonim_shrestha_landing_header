@@ -1,78 +1,108 @@
- *{
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+/*
+font-family: 'Architects Daughter', cursive;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+/*
+font-family: 'Salsa', cursive;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+
+/*
+font-family: 'Megrim', cursive;
+*/
+
+*{
     margin:0; padding:0;
-    font-family:monospace;
-    box-sizing: border-box;
+    font-family: 'Architects Daughter', cursive;
+    font-weight:200;
+    font-size: 20px;
 }
 
-#menu-container{
-    width: 100%;
-    height: 90vh;
+
+body{
+    background-color: rgb(245, 245, 245);
 }
 
-.menu-container-flex{
-    display:flex;
+.logo{
+    grid-area:logo;
+    padding: 1rem;
+    align-self:center;
 }
-
-.menu-container-flex-left-section{
-    background-color:rgb(245, 245, 245);
-    flex-basis:70%;
+.navigation{
+    grid-area: mymenu;
+    justify-self:end;
+    align-self:start;
+    padding: 1rem;
 }
-.menu-container-flex-right-section{
-    flex-basis:30%;
-    border-left: 5px solid rgb(177, 162, 162);
+.landing_image{
+    grid-area:image;
 }
-
-#menu-container-image{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.cta{
+    grid-area:header;
+    justify-self:start;
+    align-self:center;
 }
-
-/*menu and logo styling*/
-.menu-container-header{
-    display:flex;
-    justify-content: space-around;
+.grid-container{
+    display:grid;
+    justify-content: space-evenly;
     align-items:flex-start;
-    margin-top:3rem;
+    grid-template-areas:
+        'logo mymenu mymenu mymenu image'
+        'header header header header image';
+    background-color: rgb(221, 221, 219);
 }
 
-#main-logo{
-    height:150px;
-    width:150px;
-    object-fit: cover;
+/*logo styling*/
+.logo img {
     border-radius:50%;
 }
 
-.main-menu {
+/*menu styling*/
+.main-menu{
     list-style:none;
 }
 
 .main-menu li {
-    background-color: rgba(255, 255, 255, 0.308);
     display:inline-block;
-    margin: 0.8rem;
-    padding: 0.8rem;
+    margin: 1rem;
 }
+
 .main-menu li a {
-font-size:1.7rem;
-letter-spacing: 1.4px;
-text-transform: uppercase;
-text-decoration:none;
-color:black;
+    text-decoration:none;
+    color:black;
+    font-family: 'Salsa', cursive;
+    text-transform: uppercase;
+    padding: 5px;
 }
-
-.main-menu li a:hover {
-    color:white;
+.main-menu li a:hover{
+    color: rgb(221, 221, 219);
     background-color:black;
+    transition: 0.278s ease-in-out;
 }
 
-.menu-container-main-message{
-    position:relative;
-    top: 40%;
-    left: 60%;
-    transform:translate(-50%, -50%);
-    font-family:monospace;
-    font-size:2rem;
-    text-transform:uppercase;
-    line-height: 1.5;
+
+/*image-styling*/
+.landing_image img{
+    object-fit:cover;
+    width:100%;
+    height:80vh;
+}
+
+/*hero message*/
+.cta > * {
+    margin-left: 1rem;
+    font-weight: 800;
+    font-family: 'Megrim', cursive;
+}
+
+.cta h2 {
+    font-size: 3rem;
+}
+
+.cta p {
+    font-size: 1.5rem;
 }
